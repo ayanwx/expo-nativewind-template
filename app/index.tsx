@@ -1,7 +1,8 @@
 import { View, Text } from "react-native";
 import { Image } from "react-native";
 import React from "react";
-import WideIconLink from "@/components/WideIconLink";
+import { Link } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
 const index = () => {
   return (
@@ -20,11 +21,15 @@ const index = () => {
         <Text className="font-Ubuntu_Mono text-white">{"app/index.tsx"}</Text>
         {" to get started"}
       </Text>
-      <WideIconLink
-        text={"Explore Tab Navigation"}
-        href={"(root)/(tabs)/"}
-        icon={"caret-forward"}
-      />
+
+      <Link href={"/(root)/(tabs)"} className="rounded-md overflow-hidden mt-8">
+        <View className="bg-blue-500 p-4 flex-row justify-between items-center w-full rounded-md">
+          <Text className="font-Varela_Round text-white text-xl mr-2">
+            {"Explore Tab Navigation"}
+          </Text>
+          <Ionicons name={"caret-forward"} size={20} color="white" />
+        </View>
+      </Link>
     </View>
   );
 };
